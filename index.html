@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Miles Worth</title>
+  <style>
+    /* Same CSS as before */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 400px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #1e3a8a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #374fc9;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button onclick="handleLogin()">Login</button>
+    <div class="error" id="error-msg"></div>
+    <div class="footer">
+      Don't have an account? <a href="signup.php">Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
+
+      fetch("login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = "dashboard.html";
+        } else {
+          errorMsg.textContent = data.message;
+        }
+      })
+      .catch(error => {
+        errorMsg.textContent = "An error occurred. Please try again.";
+        console.error("Error:", error);
+      });
+    }
+  </script>
+</body>
+</html>
