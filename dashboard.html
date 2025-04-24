@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShipperLink - Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f7fafa;
+      color: #111827;
+    }
+
+    nav {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-left {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+
+    .nav-center {
+      flex: 1;
+      text-align: center;
+    }
+
+    .nav-center a {
+      margin: 0 0.7rem;
+      color: #374151;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-center a:hover {
+      color: #1e3a8a;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+
+    .nav-right a {
+      margin-left: 0.5rem;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+    }
+
+    .signup-btn {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      padding: 20px;
+      height: 100vh;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    }
+
+    .sidebar nav a {
+      display: block;
+      margin: 15px 0;
+      color: #222;
+      text-decoration: none;
+    }
+
+    .main-dashboard {
+      margin-left: 240px;
+      padding: 30px;
+      width: 100%;
+    }
+
+    .stats {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      width: 200px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .recent-activity ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    footer {
+      background: #0b0d17;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    footer div {
+      margin: 10px;
+    }
+
+    footer h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    footer a {
+      color: #ccc;
+      display: block;
+      margin-top: 5px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+      }
+
+      .main-dashboard {
+        margin-left: 0;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .nav-center {
+        text-align: left;
+        flex-wrap: wrap;
+      }
+
+      .nav-right {
+        margin-top: 1rem;
+      }
+
+      .stats {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-left">🚚 ShipperLink</div>
+    <div class="nav-center">
+      <a href="home.html">Home</a>
+      <a href="howworks.html">How It Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="delivery.html">Deliveries</a>
+      <a href="review.html">Reviews</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="payments.html">Payments</a>
+      <a href="avlord.html">Available Orders</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.php">Log In</a>
+      <a href="signup.php">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Dashboard -->
+  <section class="dashboard">
+    <aside class="sidebar">
+      <h2>📦 ShipperLink</h2>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="avlord.html">Available Orders</a>
+        <a href="delivery.html">My Deliveries</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="payments.html">Payments</a>
+        <a href="review.html">Reviews</a>
+      </nav>
+    </aside>
+
+    <main class="main-dashboard">
+      <div class="header">
+        <h3>Welcome, John Smith!</h3>
+        <p>Here's what’s happening with your shipments today.</p>
+      </div>
+
+      <section class="stats">
+        <div class="card">📋<br>Available Orders<br><strong>12</strong></div>
+        <div class="card">🚚<br>In Progress<br><strong>4</strong></div>
+        <div class="card">💵<br>Earnings This Month<br><strong>$2,650</strong></div>
+        <div class="card">⭐<br>Rating<br><strong>4.8/5</strong></div>
+      </section>
+
+      <section class="recent-activity">
+        <h4>Recent Activity</h4>
+        <ul>
+          <li>💰 Payment Received – $850 for order #1234 (2 hrs ago)</li>
+          <li>📝 New Review – 5 stars for order #1235 (5 hrs ago)</li>
+          <li>✅ Order Completed – Order #1236 delivered successfully (Yesterday)</li>
+        </ul>
+      </section>
+    </main>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h4>ShipperLink</h4>
+      <p>Optimizing freight logistics for cost savings and revenue generation.</p>
+      <a href="#">🌐 Facebook</a>
+      <a href="#">🐦 Twitter</a>
+      <a href="#">📷 Instagram</a>
+      <a href="#">💼 LinkedIn</a>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="home.html">Home</a>
+      <a href="howworks.html">How It Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div>
+      <h4>For Users</h4>
+      <a href="signup.php">Register as Driver</a>
+      <a href="signup.php">Register as Company</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <a href="#">123 Logistics Way, Shipping City, SC 10101</a>
+      <a href="#">+1 (123) 456-7890</a>
+    </div>
+  </footer>
+
+</body>
+</html>

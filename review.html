@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShipperLink Reviews</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 1rem;
+      color: #333;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #007bff;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container and other styles */
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .section {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .rating-overall {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .rating-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffb400;
+    }
+
+    .stars {
+      color: #ffb400;
+    }
+
+    .bar {
+      background: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      height: 10px;
+      margin: 5px 0;
+    }
+
+    .bar-inner {
+      height: 100%;
+      background-color: #28a745;
+    }
+
+    .review {
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .review:first-child {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .review-name {
+      font-weight: bold;
+    }
+
+    .review-stars {
+      color: #ffb400;
+    }
+
+    .review-text {
+      margin: 0.5rem 0;
+    }
+
+    .review-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: gray;
+    }
+
+    button.reply {
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    button.reply:hover {
+      text-decoration: underline;
+    }
+
+    .tag-replied {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-brand">ShipperLink</div>
+    <div>
+      <a href="home.html">Home</a>
+      <a href="review.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container">
+
+    <!-- Overall Rating Section -->
+    <div class="section">
+      <h2>Reviews</h2>
+      <div class="rating-overall">
+        <div class="rating-number">4.0</div>
+        <div class="stars">★★★★☆</div>
+      </div>
+      <p>Based on 3 reviews</p>
+    </div>
+
+    <!-- Rating Breakdown -->
+    <div class="section">
+      <h2>Rating Breakdown</h2>
+      <div>5 ★
+        <div class="bar"><div class="bar-inner" style="width: 33.3%"></div></div>
+        1 review
+      </div>
+      <div>4 ★
+        <div class="bar"><div class="bar-inner" style="width: 33.3%"></div></div>
+        1 review
+      </div>
+      <div>3 ★
+        <div class="bar"><div class="bar-inner" style="width: 33.3%"></div></div>
+        1 review
+      </div>
+      <div>2 ★
+        <div class="bar"><div class="bar-inner" style="width: 0%"></div></div>
+        0 reviews
+      </div>
+      <div>1 ★
+        <div class="bar"><div class="bar-inner" style="width: 0%"></div></div>
+        0 reviews
+      </div>
+    </div>
+
+    <!-- Client Reviews -->
+    <div class="section">
+      <h2>Client Reviews</h2>
+
+      <div class="review">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Jennifer Smith</div>
+            <small>ABC Logistics</small>
+          </div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <p class="review-text">Excellent service! Delivery was on time and the driver was very professional.</p>
+        <div class="review-footer">
+          <span>Order #1230 • Jun 18, 2023</span>
+          <button class="reply">Reply</button>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Robert Johnson</div>
+            <small>Tech Distributors</small>
+          </div>
+          <div class="review-stars">★★★★☆</div>
+        </div>
+        <p class="review-text">Good service, slight delay but kept us informed throughout.</p>
+        <div class="review-footer">
+          <span>Order #1228 • Jun 17, 2023</span>
+          <span class="tag-replied">Replied</span>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="review-header">
+          <div>
+            <div class="review-name">Michael Williams</div>
+            <small>Office Solutions Inc</small>
+          </div>
+          <div class="review-stars">★★★☆☆</div>
+        </div>
+        <p class="review-text">Average service, delivery was a bit late.</p>
+        <div class="review-footer">
+          <span>Order #1222 • Jun 12, 2023</span>
+          <button class="reply">Reply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Example interaction for reply button
+    const replyButtons = document.querySelectorAll('.reply');
+    replyButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        alert("Redirecting to reply screen or form...");
+      });
+    });
+  </script>
+</body>
+</html>

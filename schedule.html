@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schedule - ShipperLink</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #007bff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Content Styles */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+    }
+
+    .page-description {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .schedule-grid {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .calendar {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      width: 280px;
+    }
+
+    .calendar h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .calendar table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar th,
+    .calendar td {
+      width: 14.28%;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
+      color: #374151;
+      cursor: pointer;
+    }
+
+    .calendar td:hover {
+      background-color: #e0e7ff;
+      border-radius: 6px;
+    }
+
+    .calendar .selected {
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 50%;
+    }
+
+    .events-panel {
+      flex-grow: 1;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .events-panel h3 {
+      margin-bottom: 5px;
+    }
+
+    .event-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .event-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .event-type {
+      font-size: 12px;
+      background-color: #e0f2fe;
+      color: #2563eb;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .event-details {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+      .schedule-grid {
+        flex-direction: column;
+      }
+
+      .calendar,
+      .events-panel {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-brand">ShipperLink</div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Schedule</a>
+      <a href="#">Reviews</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container">
+    <h2>Schedule</h2>
+    <p class="page-description">Manage your upcoming pickups, deliveries, and maintenance.</p>
+
+    <div class="schedule-grid">
+      <!-- Calendar -->
+      <div class="calendar">
+        <h3>📅 April 2025</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td class="day selected" onclick="showEvent('5')">5</td></tr>
+            <tr><td onclick="showEvent('6')">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+            <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+            <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+            <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Event Details -->
+      <div class="events-panel">
+        <h3 id="selected-date">📅 April 5, 2025</h3>
+        <p>You have 1 scheduled event</p>
+
+        <div class="event-box">
+          <div class="event-header">
+            <strong>Pickup: Order #1235</strong>
+            <span class="event-type">Pickup</span>
+          </div>
+          <div class="event-details">
+            🕘 9:00 AM<br/>
+            📍 Houston, TX<br/>
+            Building Materials for Construction Corp
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showEvent(day) {
+      const days = document.querySelectorAll('.calendar td');
+      days.forEach(d => d.classList.remove('selected'));
+      event.target.classList.add('selected');
+
+      const dateDisplay = document.getElementById('selected-date');
+      if (day === '5') {
+        dateDisplay.innerHTML = '📅 April 5, 2025';
+        document.querySelector('.events-panel').innerHTML = ` 
+          <h3>📅 April 5, 2025</h3>
+          <p>You have 1 scheduled event</p>
+          <div class="event-box">
+            <div class="event-header">
+              <strong>Pickup: Order #1235</strong>
+              <span class="event-type">Pickup</span>
+            </div>
+            <div class="event-details">
+              🕘 9:00 AM<br/>
+              📍 Houston, TX<br/>
+              Building Materials for Construction Corp
+            </div>
+          </div>`;
+      } else {
+        dateDisplay.innerHTML = `📅 April ${day}, 2025`;
+        document.querySelector('.events-panel').innerHTML = ` 
+          <h3>📅 April ${day}, 2025</h3>
+          <p>No events scheduled</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

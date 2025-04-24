@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miles Worth - How It Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-buttons a {
+      padding: 6px 12px;
+      margin-left: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+      background-color: transparent;
+    }
+
+    .signup-btn {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    /* Content */
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      width: 280px;
+      text-align: left;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #1f2937;
+    }
+
+    .card ol, .card ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: #4b5563;
+    }
+
+    .card p {
+      font-weight: 500;
+      color: #10b981;
+    }
+
+    .driver p {
+      color: #2563eb;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links, .nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🚚 Miles Worth</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" >Log In</a>
+      <a href="signup.php">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="section" id="how-it-works">
+    <h1>How Miles Worth Works</h1>
+    <p>Our platform makes it easy for drivers with empty trucks to find shipments and for companies to save on transportation costs.</p>
+
+    <div class="cards">
+      <div class="card driver">
+        <h3>For Drivers</h3>
+        <ol>
+          <li>Register and create your driver profile with vehicle details</li>
+          <li>Browse available shipments matching your route and vehicle</li>
+          <li>Accept shipments and earn extra income</li>
+          <li>Deliver goods and get paid securely</li>
+        </ol>
+        <p>Earn 50% extra on empty return trips</p>
+      </div>
+
+      <div class="card company">
+        <h3>For Companies</h3>
+        <ol>
+          <li>Register and create your company profile</li>
+          <li>Post your shipment details (pickup to delivery)</li>
+          <li>Get matched with drivers on the same route</li>
+          <li>Track shipment in real-time</li>
+        </ol>
+        <p>Save up to 50% on transportation costs</p>
+      </div>
+
+      <div class="card benefits">
+        <h3>Benefits for Everyone</h3>
+        <ul>
+          <li>Reduce environmental impact by eliminating empty miles</li>
+          <li>Increase logistics efficiency</li>
+          <li>Transparent pricing</li>
+          <li>Secure, vetted driver & company community</li>
+          <li>Real-time tracking</li>
+          <li>Rating system for quality service</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-col">
+      <h4>🚚 Miles Worth</h4>
+      <p>Connecting drivers with empty trucks to companies needing shipping – save 50% on costs and earn 50% more on empty returns.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="howworks.html">How it Works</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>For Users</h4>
+      <ul>
+        <li><a href="signup.php">Register as Driver</a></li>
+        <li><a href="signup.php">Register as Company</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col contact-info">
+      <h4>Contact Us</h4>
+      <p>📍 123 Logistics Way, Shipping City, SC 10101</p>
+      <p>📞 +1 (123) 456-7890</p>
+      <p>✉️ info@milesworth.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>

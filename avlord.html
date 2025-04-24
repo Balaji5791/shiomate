@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShipperLink - Available Orders</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    nav {
+      background-color: #1959f7;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p.subtitle {
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .order {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 15px;
+      background: #fafafa;
+    }
+
+    .order-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .order-icon {
+      font-size: 24px;
+      background: #e6f0ff;
+      color: #1959f7;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .order-details {
+      font-size: 14px;
+    }
+
+    .order-details strong {
+      font-size: 16px;
+      color: #111;
+    }
+
+    .order-details p {
+      margin: 2px 0;
+    }
+
+    .order-right {
+      text-align: right;
+    }
+
+    .order-right .price {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .order-right .date {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .order-right button {
+      padding: 8px 14px;
+      background: #1959f7;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .order {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .order-right {
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">ShipperLink</div>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="howworks.html">How It Works</a></li>
+      <li><a href="avlord.html">Available Orders</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="review.html">Reviews</a></li>
+      <li><a href="delivery.html">Delivery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.php">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Available Orders</h2>
+    <p class="subtitle">Browse and accept orders that match your route and vehicle type.</p>
+
+    <!-- Order 1 -->
+    <div class="order">
+      <div class="order-left">
+        <div class="order-icon">📦</div>
+        <div class="order-details">
+          <strong>Order #1237</strong> – Furniture<br>
+          <p>Pickup: 📍 New York, NY</p>
+          <p>Delivery: 📍 Boston, MA</p>
+          <p>Distance: 215 miles</p>
+        </div>
+      </div>
+      <div class="order-right">
+        <div class="price">$750</div>
+        <div class="date">Due by Jun 23, 2023</div>
+        <button onclick="acceptOrder(1237)">Accept Order</button>
+      </div>
+    </div>
+
+    <!-- Order 2 -->
+    <div class="order">
+      <div class="order-left">
+        <div class="order-icon">📦</div>
+        <div class="order-details">
+          <strong>Order #1238</strong> – Electronics<br>
+          <p>Pickup: 📍 Chicago, IL</p>
+          <p>Delivery: 📍 Detroit, MI</p>
+          <p>Distance: 280 miles</p>
+        </div>
+      </div>
+      <div class="order-right">
+        <div class="price">$550</div>
+        <div class="date">Due by Jun 22, 2023</div>
+        <button onclick="acceptOrder(1238)">Accept Order</button>
+      </div>
+    </div>
+
+    <!-- Order 3 -->
+    <div class="order">
+      <div class="order-left">
+        <div class="order-icon">📦</div>
+        <div class="order-details">
+          <strong>Order #1239</strong> – Food Products<br>
+          <p>Pickup: 📍 Los Angeles, CA</p>
+          <p>Delivery: 📍 San Francisco, CA</p>
+          <p>Distance: 380 miles</p>
+        </div>
+      </div>
+      <div class="order-right">
+        <div class="price">$850</div>
+        <div class="date">Due by Jun 21, 2023</div>
+        <button onclick="acceptOrder(1239)">Accept Order</button>
+      </div>
+    </div>
+
+    <!-- Order 4 -->
+    <div class="order">
+      <div class="order-left">
+        <div class="order-icon">📦</div>
+        <div class="order-details">
+          <strong>Order #1240</strong> – Machinery<br>
+          <p>Pickup: 📍 Seattle, WA</p>
+          <p>Delivery: 📍 Portland, OR</p>
+          <p>Distance: 175 miles</p>
+        </div>
+      </div>
+      <div class="order-right">
+        <div class="price">$650</div>
+        <div class="date">Due by Jun 18, 2023</div>
+        <button onclick="acceptOrder(1240)">Accept Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function acceptOrder(orderId) {
+      alert(`Order #${orderId} accepted!`);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miles Worth - Save 50% on Shipping</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: #333; line-height: 1.6; }
+
+    nav {
+      background: #1e3a8a;
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav div:first-child {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 20px;
+    }
+
+    nav a.btn-login {
+      background-color: #2563eb;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    header, section, footer { padding: 40px 20px; }
+
+    h1, h2, h3 { margin-bottom: 20px; }
+    p { margin-bottom: 10px; }
+
+    .center { text-align: center; }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #2563eb;
+      color: #2563eb;
+    }
+
+    .btn-outline:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #e0f2fe, #fff);
+      padding-top: 60px;
+    }
+
+    .hero h1 span:first-child { color: #2563eb; }
+    .hero h1 span:last-child { color: #1e3a8a; }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .banner img {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 20px;
+      display: block;
+      margin: auto;
+    }
+
+    .how-it-works {
+      background-color: #f3f4f6;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      width: 300px;
+    }
+
+    .card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    .impact {
+      background: #1e3a8a;
+      color: white;
+    }
+
+    .impact-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .impact-grid div {
+      margin: 20px;
+    }
+
+    .testimonials {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .stars {
+      color: #facc15;
+    }
+
+    .cta {
+      background-color: #1e40af;
+      color: white;
+      text-align: center;
+    }
+
+    .cta a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer a {
+      color: #93c5fd;
+      margin: 0 10px;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .features, .impact-grid, .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div>Miles Worth</div>
+    <div>
+      <a href="home.html">Home</a>
+      <a href="how.html">How it Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero center">
+    <h1><span>Save 50%</span> on Shipping, <span>Earn 50%</span> More</h1>
+    <p>Miles Worth connects drivers with empty trucks to companies needing shipping.</p>
+    <div class="buttons">
+      <button class="btn btn-primary" onclick="selectRole('Driver')">I'm a Driver</button>
+      <button class="btn btn-outline" onclick="selectRole('Company')">I'm a Company</button>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section class="features">
+    <div><strong>50% Extra Earnings</strong></div>
+    <div><strong>Quick Matching</strong></div>
+    <div><strong>Secure Platform</strong></div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner">
+    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf52a7" alt="Mall Banner">
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works center">
+    <h2>How ShipperLink Works</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>For Drivers</h3>
+        <ul>
+          <li>Create a profile</li>
+          <li>Find matching shipments</li>
+          <li>Earn extra income</li>
+          <li>Deliver and rate companies</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>For Companies</h3>
+        <ul>
+          <li>Post your shipment</li>
+          <li>Match with drivers</li>
+          <li>Track in real-time</li>
+          <li>Save up to 50%</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Benefits for Everyone</h3>
+        <ul>
+          <li>Less environmental impact</li>
+          <li>No hidden fees</li>
+          <li>Live tracking</li>
+          <li>Rating system</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="impact center">
+    <h2>Our Impact in Numbers</h2>
+    <div class="impact-grid">
+      <div><h3>5,000+</h3><p>Active Drivers</p></div>
+      <div><h3>2,500+</h3><p>Registered Companies</p></div>
+      <div><h3>25,000+</h3><p>Shipments Completed</p></div>
+      <div><h3>$2.5M+</h3><p>Saved on Shipping</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"ShipperLink has completely changed how I operate my fleet."</p>
+      <strong>Michael Thompson</strong><br/>
+      <small>Driver</small>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"It's reliable, user-friendly, and makes logistics so much easier."</p>
+      <strong>Sarah Johnson</strong><br/>
+      <small>Logistics Manager</small>
+    </div>
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <p>"Profits are up, and my trucks are finally being used efficiently."</p>
+      <strong>David Chen</strong><br/>
+      <small>Fleet Owner</small>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Transform Your Logistics?</h2>
+    <p>Start saving or earning more on empty return trips.</p>
+    <div class="buttons">
+      <button class="btn btn-primary" onclick="signUp('Driver')">Sign Up as Driver</button>
+      <button class="btn btn-outline" onclick="signUp('Company')">Sign Up as Company</button>
+    </div>
+    <p style="margin-top: 10px;">Already have an account? <a href="#">Login here</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>Miles Worth</strong></p>
+    <p>Connecting drivers with empty trucks to companies needing shipping. Save 50% and earn 50% more.</p>
+    <div>
+      <a href="home.html">Home</a>
+      <a href="home.html">How it Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    function selectRole(role) {
+      alert('You selected: ' + role);
+    }
+
+    function signUp(role) {
+      alert('Redirecting to sign-up as: ' + role);
+    }
+  </script>
+</body>
+</html>

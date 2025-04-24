@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Miles Worth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .nav-buttons a {
+      padding: 6px 12px;
+      margin-left: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-btn {
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+    }
+
+    .signup-btn {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    /* Content Sections */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 1.6rem;
+      color: #1f2937;
+    }
+
+    p {
+      color: #4b5563;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    /* Mission/Vision Section */
+    .mission-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .mission-section img {
+      max-width: 350px;
+      border-radius: 10px;
+    }
+
+    .mission-text {
+      max-width: 450px;
+      text-align: left;
+    }
+
+    .mission-text h3 {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+
+    /* Our Story */
+    .story {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    /* Leadership Team */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .team-member img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .team-member h4 {
+      margin-bottom: 5px;
+    }
+
+    .team-member span {
+      display: block;
+      font-size: 0.9rem;
+      color: #2563eb;
+      margin-bottom: 5px;
+    }
+
+    /* CTA */
+    .cta {
+      margin-top: 40px;
+    }
+
+    .cta-buttons a {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    .cta .btn-driver {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    .cta .btn-company {
+      border: 1px solid #1e3a8a;
+      color: #1e3a8a;
+    }
+
+    .small-link {
+      margin-top: 10px;
+      display: block;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .mission-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .mission-text {
+        text-align: center;
+      }
+
+      .team-member {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🚚 Miles Worth</div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="howworks.html">How It Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.php" class="login-btn">Log In</a>
+      <a href="signup.php" class="signup-btn">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section>
+    <h1>About Miles Worth</h1>
+    <p>Connecting empty trucks with shipping needs since 2023, revolutionizing the logistics industry one trip at a time.</p>
+
+    <div class="mission-section">
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80" alt="Truck Image">
+      <div class="mission-text">
+        <h3>Our Mission</h3>
+        <p>At Miles Worth, we’re on a mission to eliminate empty truck returns by connecting drivers with shipping companies. Our platform helps reduce carbon emissions, saves companies up to 50% on transportation costs, and allows drivers to earn 50% more on return trips.</p>
+        <h3>Our Vision</h3>
+        <p>We envision a future where no truck returns empty, creating a more efficient, sustainable, and profitable logistics ecosystem for everyone involved.</p>
+      </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="story">
+      <h2>Our Story</h2>
+      <p>Miles Worth was founded in 2023 by a team of logistics experts who recognized a fundamental inefficiency in the transportation industry: the number of trucks returning empty after deliveries.</p>
+      <p>Our founders saw an opportunity to create a win-win solution that would benefit both drivers and companies, while also reducing the environmental impact of empty miles.</p>
+      <p>Starting with a small network of drivers and companies in one region, we’ve now expanded nationwide, connecting thousands of drivers with shipping opportunities that would otherwise go unfilled.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Join Us in Revolutionizing Logistics</h2>
+      <p>Whether you're a driver looking to maximize your earnings or a company seeking to reduce shipping costs, Miles Worth is here to help you succeed in the modern logistics landscape.</p>
+      <div class="cta-buttons">
+        <a href="signup.php" class="btn-driver">Sign Up as Driver</a>
+        <a href="signup.php" class="btn-company">Sign Up as Company</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

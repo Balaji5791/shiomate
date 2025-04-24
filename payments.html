@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payments - ShipperLink</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+      color: #111827;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    header nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    header .auth-buttons button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .log-in {
+      background-color: white;
+      border: 1px solid #2563eb;
+      color: #2563eb;
+    }
+
+    .sign-up {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .card p {
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    canvas {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      margin: 20px 0 10px;
+    }
+
+    .bank-box {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .default-badge {
+      font-size: 12px;
+      background-color: #dcfce7;
+      color: #16a34a;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .btn {
+      background-color: #1d4ed8;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+
+    .status-completed {
+      background-color: #dcfce7;
+      color: #16a34a;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      text-align: center;
+      width: 80px;
+    }
+
+    .status-pending {
+      background-color: #fef3c7;
+      color: #d97706;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      text-align: center;
+      width: 80px;
+    }
+
+    .download-link {
+      color: #1d4ed8;
+      text-decoration: underline;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">ShipperLink</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="howworks.html">How It Works</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.php">signup</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="log-in">Log In</button>
+      <button class="sign-up">Sign Up</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Payments</h2>
+    <p>Manage your earnings, track transactions, and download invoices.</p>
+
+    <!-- Earnings Overview -->
+    <div class="grid">
+      <div class="card">
+        <h3>$8,950</h3>
+        <p>Total Earnings<br/><small>+2,650 from last month</small></p>
+      </div>
+      <div class="card">
+        <h3>$750</h3>
+        <p>Pending Payments<br/><small>1 payment in process</small></p>
+      </div>
+      <div class="card">
+        <h3>Jun 30, 2023</h3>
+        <p>Next Payout<br/><small>Estimated amount: $1,250</small></p>
+      </div>
+    </div>
+
+    <!-- Monthly Earnings Chart -->
+    <h3 class="section-title">Monthly Earnings</h3>
+    <canvas id="earningsChart" height="100"></canvas>
+
+    <!-- Payment Methods -->
+    <h3 class="section-title">Payment Methods</h3>
+    <div class="bank-box">
+      <div>🏦 Bank Account ••••3456</div>
+      <div class="default-badge">Default</div>
+    </div>
+    <button class="btn">Add Payment Method</button>
+
+    <!-- Transaction History -->
+    <h3 class="section-title">Transaction History</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Order ID</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Invoice</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jun 21, 2023</td>
+          <td>Payment for Order #1235</td>
+          <td>#1235</td>
+          <td>$950</td>
+          <td><span class="status-completed">Completed</span></td>
+          <td><span class="download-link">Download</span></td>
+        </tr>
+        <tr>
+          <td>Jun 19, 2023</td>
+          <td>Payment for Order #1230</td>
+          <td>#1230</td>
+          <td>$850</td>
+          <td><span class="status-completed">Completed</span></td>
+          <td><span class="download-link">Download</span></td>
+        </tr>
+        <tr>
+          <td>Jun 17, 2023</td>
+          <td>Payment for Order #1228</td>
+          <td>#1228</td>
+          <td>$1250</td>
+          <td><span class="status-completed">Completed</span></td>
+          <td><span class="download-link">Download</span></td>
+        </tr>
+        <tr>
+          <td>Jun 15, 2023</td>
+          <td>Payment for Order #1222</td>
+          <td>#1222</td>
+          <td>$750</td>
+          <td><span class="status-pending">Pending</span></td>
+          <td><span class="download-link">Download</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('earningsChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Earnings',
+          data: [1000, 1600, 2400, 2100, 1600, 3200],
+          backgroundColor: '#1f2937',
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 800
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

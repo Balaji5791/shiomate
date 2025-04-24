@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Deliveries - ShipperLink</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: white;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .navbar nav a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .navbar-buttons button {
+      padding: 8px 16px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login {
+      background: transparent;
+      color: #000;
+    }
+
+    .signup {
+      background: #1959f7;
+      color: white;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      background-color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background-color: #e0e7ff;
+      color: #1d4ed8;
+      font-weight: bold;
+    }
+
+    .delivery-card {
+      background-color: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .delivery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .delivery-header .status {
+      font-size: 14px;
+      color: #2563eb;
+      background-color: #e0f2fe;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .delivery-body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .info-section {
+      flex: 1 1 300px;
+    }
+
+    .info-title {
+      font-weight: bold;
+    }
+
+    .info-sub {
+      color: #6b7280;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .progress-section {
+      flex: 1 1 200px;
+      text-align: right;
+    }
+
+    .progress-bar-bg {
+      background-color: #e5e7eb;
+      height: 8px;
+      border-radius: 4px;
+      margin: 6px 0;
+    }
+
+    .progress-bar-fill {
+      height: 8px;
+      background-color: #3b82f6;
+      border-radius: 4px;
+    }
+
+    .btn {
+      background-color: #2563eb;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .btn:disabled {
+      background-color: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 600px) {
+      .delivery-body {
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .progress-section {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <div class="logo">🚚 ShipperLink</div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="delivery.html">My Deliveries</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.php">Register</a>
+      </nav>
+      <div class="navbar-buttons">
+        <button class="login">Log In</button>
+        <button class="signup">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>My Deliveries</h2>
+    <p>Manage your ongoing and completed deliveries.</p>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('active')">Active Deliveries (2)</div>
+      <div class="tab" onclick="switchTab('completed')">Completed (2)</div>
+    </div>
+
+    <div id="deliveries-list">
+      <!-- Delivery Card 1 -->
+      <div class="delivery-card">
+        <div class="delivery-header">
+          <div class="status">In Progress • Order #1235</div>
+          <div class="company">Construction Corp</div>
+        </div>
+        <div class="delivery-body">
+          <div class="info-section">
+            <div class="info-title">Building Materials</div>
+            <div class="info-sub">Picked up: Jun 22, 2023</div>
+            <div class="info-sub">From: Houston, TX</div>
+            <div class="info-sub">To: Dallas, TX</div>
+          </div>
+          <div class="progress-section">
+            <div>25% Complete • <strong>$950</strong></div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 25%;"></div>
+            </div>
+            <button class="btn" onclick="markDelivered(this)">Mark as Delivered</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery Card 2 -->
+      <div class="delivery-card">
+        <div class="delivery-header">
+          <div class="status">In Progress • Order #1233</div>
+          <div class="company">Office Solutions Inc</div>
+        </div>
+        <div class="delivery-body">
+          <div class="info-section">
+            <div class="info-title">Office Supplies</div>
+            <div class="info-sub">Picked up: Jun 21, 2023</div>
+            <div class="info-sub">From: Phoenix, AZ</div>
+            <div class="info-sub">To: Tucson, AZ</div>
+          </div>
+          <div class="progress-section">
+            <div>75% Complete • <strong>$450</strong></div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 75%;"></div>
+            </div>
+            <button class="btn" onclick="markDelivered(this)">Mark as Delivered</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function switchTab(tab) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(t => t.classList.remove('active'));
+      if (tab === 'active') {
+        tabs[0].classList.add('active');
+        document.getElementById('deliveries-list').style.display = 'block';
+      } else {
+        tabs[1].classList.add('active');
+        document.getElementById('deliveries-list').style.display = 'none';
+        alert('Completed deliveries feature coming soon!');
+      }
+    }
+
+    function markDelivered(button) {
+      button.innerText = 'Delivered';
+      button.disabled = true;
+      button.style.backgroundColor = '#10b981';
+    }
+  </script>
+</body>
+</html>
